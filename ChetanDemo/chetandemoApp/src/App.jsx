@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Test from './test.jsx'
+import Test, { Test2, Test3 } from './Test.jsx'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -28,7 +28,9 @@ function App() {
       <button onClick={handleClick}>Increment Count</button>
       <button onClick={() => setCount(0)}>Reset Count</button>
       <button onClick={() => Sumveriable(counter)}>Increment Variable {counter}</button>
-      <Test />
+  <Test />
+  <Test2 />
+  <Test3 />
     </>
   )
 }
