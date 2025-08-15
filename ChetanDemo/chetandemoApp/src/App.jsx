@@ -3,6 +3,7 @@ import Test, { Test2, Test3 } from './Test.jsx'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import UserInfo from './Lession1.jsx'
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
   <Test />
   <Test2 />
   <Test3 />
+  <UserInfo />
     </>
   )
 }
