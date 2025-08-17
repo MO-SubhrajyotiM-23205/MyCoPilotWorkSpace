@@ -1,3 +1,5 @@
+
+
 const User = {
     name: "John",
     age: 30,
@@ -13,8 +15,11 @@ const { name, age, location, email } = User;
 const options1 = [1,2,3,4];
 const options2 = [7,8,9,10];
 
-const options = [...options1, ...options2];
+const totalOptions = [...options1, ...options2];
 
+const onTextChange = (e) => {
+    alert(e.target.value);
+};
 
 const UserInfo = () => {
     return (
@@ -27,10 +32,11 @@ const UserInfo = () => {
             <p>Email: {email}</p>
             <label htmlFor="combo">Select an option: </label>
             <select id="combo">
-                {options.map((opt, idx) => (
+                {totalOptions.map((opt, idx) => (
                     <option key={idx} value={opt}>{opt}</option>
                 ))}
             </select>
+            <input type="text" placeholder="Type here..." onChange={onTextChange} />
         </div>
     );
 };
