@@ -12,8 +12,8 @@ User.name = "SUBHRAJYOTI";
 
 const { name, age, location, email } = User;
 
-const options1 = [1,2,3,4];
-const options2 = [7,8,9,10];
+const options1 = [10000,20000,30000,40000];
+const options2 = [70000,80000,90000,100000];
 
 const totalOptions = [...options1, ...options2];
 
