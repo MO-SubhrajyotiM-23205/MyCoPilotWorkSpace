@@ -4,7 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import UserInfo from './Lession1.jsx'
-import Practical1 from './Practical1.jsx'
+import Practical1 ,{Filternumber} from './Practical1.jsx'
 
 
 function App() {
@@ -35,6 +35,8 @@ function App() {
   <Test3 />
   <UserInfo />
   <Practical1 />
+  <Filternumber />
+
     </>
   )
 }
