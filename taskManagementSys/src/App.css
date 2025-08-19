@@ -3,7 +3,7 @@ display: grid;
 grid-template-rows: 150px auto ;
 }
 
-.App_main {
+.app_main {
   display: flex;
   justify-content: space-evenly;
   padding: 20px 8%;
@@ -15,7 +15,8 @@ grid-template-rows: 150px auto ;
 
 
 
-.App_main_section {
+.app_main_section {
  width: 33.33%;
  background-color: tomato;
+ margin: 20px;
 } 
