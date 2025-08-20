@@ -2,10 +2,19 @@ import React from 'react';
 import './App.css';
 import TaskForm from './components/TaskForm';
 import ListTest from './components/listTest';
+import DemoClass from './components/DemoClass';
+import AditiTest from './components/aditiTest';
+import WedSession from './components/WedSession';
 
 const App =()=>{
 
-   return (
+  return(
+
+    <WedSession />
+
+  )
+
+  /* return (
      <div className='app_container'>
        <TaskForm />
        <main className='app_main'>
@@ -16,7 +25,7 @@ const App =()=>{
       
      </div>
    )
-/*   const [selectedCountry, setSelectedCountry] = React.useState("");
+   const [selectedCountry, setSelectedCountry] = React.useState("");
    return (
      <div>
        <label htmlFor="country-dropdown">Country: </label>
