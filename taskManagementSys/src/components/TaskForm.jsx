@@ -8,8 +8,8 @@ const TaskForm = () => {
     return (
         <div>
             <header className='app_header'> Task Management System</header>
-            <form>
-                
+            <form className='task_form'>
+
                 <input type="text" className='task_input' placeholder="Task Title" />
                 <div className='task_form_actions'>
                     <TagButton Taglabel="HTML" />

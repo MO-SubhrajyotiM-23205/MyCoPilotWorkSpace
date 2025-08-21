@@ -1,9 +1,14 @@
 
-const todoIcon = "../assets/todo-icon.png"; // Adjust the path as necessary
-const inProgressIcon = "../assets/glowing-star.png"; // Adjust the path as necessary
-const doneIcon = "../assets/check-mark-button.png"; // Adjust the path as necessary
+import React from 'react';
+import todoIcon from "../assets/todo-icon.png"; // Adjust the path as necessary
+import inProgressIcon from "../assets/glowing-star.png"; // Adjust the path as necessary
+import doneIcon from "../assets/check-mark-button.png"; // Adjust the path as necessary
+import TaskCard from './TaskCard';
+import './TaskColumn.css'; // Assuming you have a CSS file for styling
 
 const TaskColumn = ({title}) => {
+
+
     let icon;
     if (title === "To Do") {
         icon = todoIcon;
@@ -14,9 +19,15 @@ const TaskColumn = ({title}) => {
     }
 
     return (
-        <section >
-            <h2><img src={icon} />{title}</h2>
-        </section>
+        <div className='task_column'>
+
+                <h2 className='task_column_title'><img src={icon} className='task_column_icon' />{title}</h2>
+                <br />
+                <TaskCard />
+                
+
+        </div>
+
     );
 };
 
