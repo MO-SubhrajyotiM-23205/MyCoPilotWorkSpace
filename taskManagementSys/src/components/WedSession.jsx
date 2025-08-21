@@ -29,10 +29,10 @@ const WedSession = () => {
             <h1 style={headerStyle}>My Task: {totalCount === 0 ? "No tasks available" : `No of Tasks: ${totalCount}`}</h1>
             <button className="btnClass" disabled={isDisabled} onClick={getTotalCount}>Add Count</button>
             <br />
-            <input value={name} onChange={e => setName(e.target.value)} />
+            <input className='inpText' value={name} onChange={e => setName(e.target.value)} />
             
             <button className="btnClass" onClick={() => { arrTasks.push({id: nextId++, name: name,});}}>
-              Add</button>
+              Add Task</button>
             <ul>
               {arrTasks.map(task => (
                 <li key={task.id}>{task.name}</li>

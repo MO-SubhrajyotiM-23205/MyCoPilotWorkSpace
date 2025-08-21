@@ -11,4 +11,10 @@
   background-color: #ccc;
   cursor: not-allowed;
 }
-    
+
+.inpText {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
