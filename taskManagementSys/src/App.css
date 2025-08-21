@@ -1,6 +1,6 @@
 .app_container {
-display: grid;
-grid-template-rows: 150px auto ;
+  display: grid;
+  grid-template-rows: 150px auto ;
 }
 
 .app_main {
@@ -9,14 +9,15 @@ grid-template-rows: 150px auto ;
   padding: 20px 8%;
 }
 
-/* .App_header {
-
-}*/
-
+.app_header {
+  background-color: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+}
 
 
 .app_main_section {
- width: 33.33%;
- background-color: tomato;
- margin: 20px;
-} 
+  width: 33.33%;
+  background-color: tomato;
+  margin: 20px;
+}
