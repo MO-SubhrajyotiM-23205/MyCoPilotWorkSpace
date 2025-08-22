@@ -16,14 +16,19 @@ const setInputData = (e) => {
     const { name, value } = e.target;
     // setFormData({
     //     ...formData,
-    //     [name]: value,[status]: value
+    //     [name]: value
     // });
     setFormData(prevData => ({
         ...prevData,
         [name]: value
     }))
 };
+const selecttag = (tag) => {
+console.log("Selected tag:", tag);
+};
+
 console.log(formData);
+
 
 return (
     <div>
@@ -32,10 +37,10 @@ return (
 
             <input type="text" name="title" className='task_input' placeholder="Task Title" onChange={setInputData} />
             <div className='task_form_actions' >
-                <TagButton Taglabel="HTML" />
-                <TagButton Taglabel="CSS" />
-                <TagButton Taglabel="JavaScript" />
-                <TagButton Taglabel="React" />
+                <TagButton Taglabel="HTML" selecttag={selecttag}   />
+                <TagButton Taglabel="CSS" selecttag={selecttag} />
+                <TagButton Taglabel="JavaScript" selecttag={selecttag} />
+                <TagButton Taglabel="React" selecttag={selecttag} />
 
                 <select name="status" className='task_status' onChange={setInputData}>
                     <option value="todo">To Do</option>

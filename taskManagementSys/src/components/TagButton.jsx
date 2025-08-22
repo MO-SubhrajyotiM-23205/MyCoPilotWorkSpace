@@ -1,8 +1,8 @@
 
 
-const TagButton = ({ Taglabel }) => {
+const TagButton = ({ Taglabel, selecttag }) => {
     return (
-        <button className='tag'>
+        <button type="button" className='tag' onClick={() => selecttag(Taglabel)}>
             {Taglabel}+
         </button>
     );
