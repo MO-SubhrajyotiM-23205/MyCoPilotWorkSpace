@@ -14,21 +14,38 @@ const TaskForm = () => {
 
 const setInputData = (e) => {
     const { name, value } = e.target;
-    // setFormData({
-    //     ...formData,
-    //     [name]: value
-    // });
     setFormData(prevData => ({
         ...prevData,
         [name]: value
     }))
 };
 const selecttag = (tag) => {
-console.log("Selected tag:", tag);
+    setFormData(prevData => {
+        const { tags } = prevData;
+        if (tags.includes(tag)) {
+            // Remove tag
+            return {
+                ...prevData,
+                tags: tags.filter(t => t !== tag)
+            };
+        } else {
+            // Add tag
+            return {
+                ...prevData,
+                tags: [...tags, tag]
+            };
+        }
+    });
 };
 
-console.log(formData);
+const onSubmitHandle = (e) => {
+    e.preventDefault();
+    console.log(formData);
+};
 
+const checkselected = (tag) => {
+    return formData.tags.includes(tag);
+};
 
 return (
     <div>
@@ -37,17 +54,17 @@ return (
 
             <input type="text" name="title" className='task_input' placeholder="Task Title" onChange={setInputData} />
             <div className='task_form_actions' >
-                <TagButton Taglabel="HTML" selecttag={selecttag}   />
-                <TagButton Taglabel="CSS" selecttag={selecttag} />
-                <TagButton Taglabel="JavaScript" selecttag={selecttag} />
-                <TagButton Taglabel="React" selecttag={selecttag} />
+                <TagButton Taglabel="HTML" selecttag1={selecttag} isSelected={checkselected("HTML")} />
+                <TagButton Taglabel="CSS" selecttag1={selecttag} isSelected={checkselected("CSS")} />
+                <TagButton Taglabel="JavaScript" selecttag1={selecttag} isSelected={checkselected("JavaScript")} />
+                <TagButton Taglabel="React" selecttag1={selecttag} isSelected={checkselected("React")} />
 
                 <select name="status" className='task_status' onChange={setInputData}>
                     <option value="todo">To Do</option>
                     <option value="in-progress">In Progress</option>
                     <option value="done">Done</option>
                 </select>
-                <button type='submit' className='task_submit'>Add Task</button>
+                <button type='submit' className='task_submit' onClick={onSubmitHandle}>Add Task</button>
 
             </div>
         </form>
