@@ -6,7 +6,7 @@ const TagButton = ({ Taglabel, selecttag1, isSelected }) => {
         const colorMap = {
             HTML: 'lightblue',
             CSS: 'lightgreen',
-            JavaScript: 'lightyellow',
+            JavaScript: 'Orange',
             React: 'lightpink'
         };
         return {

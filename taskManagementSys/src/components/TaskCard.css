@@ -1,5 +1,5 @@
 .task-card {
-    border: 1px solid #ccc;
+    border: 1px solid #5b72da;
     border-radius: 5px;
     padding: 16px;
     margin: 16px 0;
@@ -17,6 +17,7 @@
 
 .task-card-status {
     font-weight: bold;
+
 }
 
 .task-card-actions button {

@@ -3,7 +3,7 @@ import './TaskForm.css'; // Assuming you have a CSS file for styling
 import TagButton from './TagButton';
 // Adjust the path as necessary
 
-const TaskForm = () => {
+const TaskForm = ({ setTaskData }) => {
 
     const [formData, setFormData] = useState({
         title: "",
@@ -40,7 +40,15 @@ const selecttag = (tag) => {
 
 const onSubmitHandle = (e) => {
     e.preventDefault();
-    console.log(formData);
+    setTaskData((prevSelected) => {
+        return [...prevSelected, formData];
+    });
+    setFormData({
+        title: "",
+        status: "todo",
+        tags: []
+    });
+
 };
 
 const checkselected = (tag) => {
@@ -52,7 +60,7 @@ return (
         <header className='app_header'> Task Management System</header>
         <form className='task_form'>
 
-            <input type="text" name="title" className='task_input' placeholder="Task Title" onChange={setInputData} />
+            <input type="text" name="title" className='task_input' placeholder="Task Title" value={formData.title} onChange={setInputData} />
             <div className='task_form_actions' >
                 <TagButton Taglabel="HTML" selecttag1={selecttag} isSelected={checkselected("HTML")} />
                 <TagButton Taglabel="CSS" selecttag1={selecttag} isSelected={checkselected("CSS")} />
