@@ -67,7 +67,7 @@ return (
                 <TagButton Taglabel="JavaScript" selecttag1={selecttag} isSelected={checkselected("JavaScript")} />
                 <TagButton Taglabel="React" selecttag1={selecttag} isSelected={checkselected("React")} />
 
-                <select name="status" className='task_status' onChange={setInputData}>
+                <select name="status" className='task_status' onChange={setInputData} value={formData}>
                     <option value="todo">To Do</option>
                     <option value="in-progress">In Progress</option>
                     <option value="done">Done</option>

@@ -6,7 +6,7 @@ import doneIcon from "../assets/check-mark-button.png"; // Adjust the path as ne
 import TaskCard from './TaskCard';
 import './TaskColumn.css'; // Assuming you have a CSS file for styling
 
-const TaskColumn = ({title, tasks = []}) => {
+const TaskColumn = ({title, tasks = [], handleDeleteTask}) => {
 
 
 
@@ -27,8 +27,8 @@ const TaskColumn = ({title, tasks = []}) => {
                 <br />
                 {/* Render tasks here */}
                 {(tasks || []).map((task, index) => (
-                    
-                    <TaskCard key={index} task={task} />
+
+                    <TaskCard key={index} task={task} handleDeleteTask={handleDeleteTask} index={index} />
                 ))}
 
         </div>

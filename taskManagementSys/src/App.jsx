@@ -1,25 +1,34 @@
-import React,{ useState } from 'react';
+import React,{ useState,useEffect } from 'react';
 import './App.css';
 import TaskForm from './components/TaskForm';
 import TaskColumn from './components/TaskColumn';
 
 
 
-
+  
 
 const App = () => {
+const oldTasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-  const [selectedTasks, setSelectedTasks] = useState([]);
+  const [selectedTasks, setSelectedTasks] = useState(oldTasks);
 
+useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(selectedTasks));
+  },[selectedTasks]);
 
-  console.log(selectedTasks);
+  const handleDeleteTask = (taskToDelete) => {
+    setSelectedTasks((prevTasks) =>
+      prevTasks.filter((task) => task !== taskToDelete)
+    );
+  };
+
   return (
     <div className='app_container'>
       <TaskForm  setTaskData={setSelectedTasks} />
       <main className='app_main'>
-        <TaskColumn title="To Do" tasks={selectedTasks.filter(task => task.status === "todo")} />
-        <TaskColumn title="In Progress" tasks={selectedTasks.filter(task => task.status === "in-progress")} />
-        <TaskColumn title="Done" tasks={selectedTasks.filter(task => task.status === "done")} />
+        <TaskColumn title="To Do" tasks={selectedTasks.filter(task => task.status === "todo")} handleDeleteTask={handleDeleteTask} />
+        <TaskColumn title="In Progress" tasks={selectedTasks.filter(task => task.status === "in-progress")} handleDeleteTask={handleDeleteTask} />
+        <TaskColumn title="Done" tasks={selectedTasks.filter(task => task.status === "done")} handleDeleteTask={handleDeleteTask} />
       </main>
 
     </div>
