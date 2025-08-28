@@ -4,16 +4,24 @@ import './appointmentForm.css';
 const AppointmentForm = () => {
     const [message, setMessage] = useState('');
     const [doctors, setDoctors] = useState([]);
+    const [file, setFile] = useState(null);
     const specializations = ['Cardiology', 'Dermatology', 'Pediatrics', 'Radiology'];
     const [formData, setFormData] = useState({
         patientName: '',
         doctor: '',
         date: '',
-        time: ''
+        time: '',
+        testReport: null
     });
+    
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleFileChange = (e) => {
+        setFile(e.target.files[0]);
+        setFormData({ ...formData, testReport: e.target.files[0] });
     };
 
 
@@ -24,7 +32,15 @@ const AppointmentForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        localStorage.setItem('appointments', JSON.stringify([...JSON.parse(localStorage.getItem('appointments') || '[]'), formData]));
+        // For demonstration, only file name is saved. Real file upload needs backend or base64.
+        const appointmentData = {
+            ...formData,
+            testReport: file ? file.name : null
+        };
+        localStorage.setItem('appointments', JSON.stringify([
+            ...JSON.parse(localStorage.getItem('appointments') || '[]'),
+            appointmentData
+        ]));
         setMessage('Appointment booked successfully!');
         setTimeout(() => {
             setMessage('');
@@ -33,9 +49,11 @@ const AppointmentForm = () => {
             patientName: '',
             doctor: '',
             date: '',
-            time: ''
+            time: '',
+            testReport: null
         });
-        // Handle form submission logic
+        setFile(null);
+        console.log('Appointment Data:', file);
     };
 
     return (
@@ -72,7 +90,29 @@ const AppointmentForm = () => {
                 Time:
                 <input type="time" name="time" onChange={handleChange} value={formData.time} required />
             </label>
-            <button type="submit" onClick={handleSubmit}>Book Appointment</button>
+            <label>
+                Test Report (Upload):
+                <input type="file" name="testReport" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" onChange={handleFileChange} />
+            </label>
+            {file && (
+                <div style={{marginBottom: '10px'}}>
+                    Selected file: {file.name}
+                    {file.type.startsWith('image/') ? (
+                        <div style={{marginTop: '8px'}}>
+                            <img src={URL.createObjectURL(file)} alt="Test Report Preview" style={{maxWidth: '200px', maxHeight: '200px', display: 'block'}} />
+                        </div>
+                    ) : file.type === 'application/pdf' ? (
+                        <div style={{marginTop: '8px'}}>
+                            <a href={URL.createObjectURL(file)} target="_blank" rel="noopener noreferrer">View PDF</a>
+                        </div>
+                    ) : (
+                        <div style={{marginTop: '8px'}}>
+                            <a href={URL.createObjectURL(file)} target="_blank" rel="noopener noreferrer">Download/View File</a>
+                        </div>
+                    )}
+                </div>
+            )}
+            <button type="submit">Book Appointment</button>
         </form>
     );
 };

@@ -1,0 +1,43 @@
+.movie-list {
+    padding: 20px;
+}
+
+.movie-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie-list-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.movie-list-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+}
+
+.movie-list-fs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.movieFilter {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.movie_filter_item {
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.sort_option,
+.movie_sorting {
+    margin-left: 12px;
+}

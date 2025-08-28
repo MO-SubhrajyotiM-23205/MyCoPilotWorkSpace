@@ -9,10 +9,9 @@ function App() {
 
   return (
     <>
-    <AppointmentForm/>
-
+      <AppointmentForm/>
     </>
   )
 }
 
-export default App
+      export default App
