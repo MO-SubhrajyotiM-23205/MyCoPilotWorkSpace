@@ -29,6 +29,10 @@ const MovieList = () => {
             <MovieCard />
         </div>
     </section>
+
+
+
+    
   );
 };
 

@@ -32,3 +32,9 @@
   height: 25px;
   margin-left: 7px;
 }
+
+
+.navbar_links > .active {
+  color: green;
+  background-color: yellow;
+}
