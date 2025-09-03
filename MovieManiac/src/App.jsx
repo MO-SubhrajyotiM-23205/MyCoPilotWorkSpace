@@ -1,11 +1,12 @@
 import React from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import TestQueryString from "./assets/Components/TestQueryString";
 import "./app.css";
 import Navbar from "./assets/Components/NavBar/Navbar";
 import MovieList from "./assets/Components/Movielist/MovieList";
 import APITest from "./assets/Components/Movielist/APITest";
 import NotFound from "./assets/Components/NotFound";
-import { Route, Routes, useNavigate } from "react-router-dom";
-import TestQueryString from "./assets/Components/TestQueryString";
+import APIAxiosCalling from "./assets/Components/Movielist/APIAxiosCalling";
 
 function App() {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ function App() {
           <Route path="/movielist" element={<MovieList />} />
           <Route path="/apitest" element={<APITest />} />
           <Route path="/testabc" element={<TestQueryString />} />
+          <Route path="/axioscalling" element={<APIAxiosCalling />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

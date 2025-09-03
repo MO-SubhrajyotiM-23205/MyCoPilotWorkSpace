@@ -14,6 +14,7 @@ const Navbar = () => {
           <NavLink to="/about">Top Rated <img src={star} alt="Star" className="navbar_icon" /></NavLink>
           <NavLink to="/contact">Contact <img src={party} alt="Party" className="navbar_icon" /></NavLink>
           <NavLink to="/apitest">API Test</NavLink>
+          <NavLink to="/axioscalling">Axios Test</NavLink>
         </div>
         
       </nav>
