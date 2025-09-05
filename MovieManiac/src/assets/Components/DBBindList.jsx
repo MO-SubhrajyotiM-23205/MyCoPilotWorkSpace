@@ -30,9 +30,15 @@ const DBBindList = () => {
     <div>
       <h2>Database List</h2>
       <ul>
-        {data.map((item, idx) => (
-          <li key={idx}>{JSON.stringify(item)}</li>
-        ))}
+          {data.map((item, idx) => (
+            <li key={idx}>
+              <ul style={{marginBottom: '10px'}}>
+                {Object.entries(item).map(([key, value]) => (
+                  <li key={key}><strong>{key}:</strong> {String(value)}</li>
+                ))}
+              </ul>
+            </li>
+          ))}
       </ul>
     </div>
   );
