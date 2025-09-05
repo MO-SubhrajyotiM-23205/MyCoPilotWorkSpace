@@ -15,6 +15,7 @@ const Navbar = () => {
           <NavLink to="/contact">Contact <img src={party} alt="Party" className="navbar_icon" /></NavLink>
           <NavLink to="/apitest">API Test</NavLink>
           <NavLink to="/axioscalling">Axios Test</NavLink>
+          <NavLink to="/dbbindlist">DB Bind List</NavLink>
         </div>
         
       </nav>
