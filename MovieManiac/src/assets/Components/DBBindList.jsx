@@ -29,7 +29,7 @@ const DBBindList = () => {
   return (
     <div>
       <h2>Database List</h2>
-      <ul>
+      <ul> 
           {data.map((item, idx) => (
             <li key={idx}>
               <ul style={{marginBottom: '10px'}}>

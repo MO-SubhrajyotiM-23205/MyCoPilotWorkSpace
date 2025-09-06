@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from "./Contexts/UserContext";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import TestQueryString from "./assets/Components/TestQueryString";
 import "./app.css";
@@ -14,22 +15,30 @@ function App() {
   const handleTestQuery = () => {
     navigate("/testabc?name=Subhro&phone=123456");
   };
+  // Example context value
+  const userContextValue = {
+    name: "Subhro",
+    phone: "123456",
+    role: "admin"
+  };
   return (
-    <div className="App">
-      <Navbar />
-      <main>
-        <button onClick={handleTestQuery} style={{margin: '1rem'}}>Show TestQueryString</button>
-        <Routes >
-          <Route path="/" element={<MovieList />} />
-          <Route path="/movielist" element={<MovieList />} />
-          <Route path="/apitest" element={<APITest />} />
-          <Route path="/testabc" element={<TestQueryString />} />
-          <Route path="/axioscalling" element={<APIAxiosCalling />} />
-          <Route path="/dbbindlist" element={<DBBindList />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
-    </div>
+    <UserContext.Provider value={userContextValue}>
+      <div className="App">
+        <Navbar />
+        <main>
+          <button onClick={handleTestQuery} style={{margin: '1rem'}}>Show TestQueryString</button>
+          <Routes >
+            <Route path="/" element={<MovieList />} />
+            <Route path="/movielist" element={<MovieList />} />
+            <Route path="/apitest" element={<APITest />} />
+            <Route path="/testabc" element={<TestQueryString />} />
+            <Route path="/axioscalling" element={<APIAxiosCalling />} />
+            <Route path="/dbbindlist" element={<DBBindList />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+      </div>
+    </UserContext.Provider>
   );
 }
 
