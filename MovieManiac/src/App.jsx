@@ -10,6 +10,8 @@ import NotFound from "./assets/Components/NotFound";
 import APIAxiosCalling from "./assets/Components/Movielist/APIAxiosCalling";
 import DBBindList from "./assets/Components/DBBindList";
 import APIcallthroughUseData from "./assets/Components/Movielist/APIcallthroughUseData";
+import CheckUseRefHook from "./assets/Components/CheckUseRefHook";
+import CreateReackFormHook from "./assets/Components/CreateReackFormHook";
 
 function App() {
   const navigate = useNavigate();
@@ -36,6 +38,8 @@ function App() {
             <Route path="/axioscalling" element={<APIAxiosCalling />} />
             <Route path="/dbbindlist" element={<DBBindList />} />
             <Route path="/apicallthroughusedata" element={<APIcallthroughUseData />} />
+            <Route path="/checkuserefhook" element={<CheckUseRefHook />} />
+            <Route path="/checkreackformhook" element={<CreateReackFormHook />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

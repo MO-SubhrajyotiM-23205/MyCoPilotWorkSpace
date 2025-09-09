@@ -17,6 +17,8 @@ const Navbar = () => {
           <NavLink to="/apicallthroughusedata">API By useData</NavLink>
           <NavLink to="/axioscalling">Axios Test</NavLink>
           <NavLink to="/dbbindlist">DB Bind List</NavLink>
+          <NavLink to="/checkuserefhook">useRef</NavLink>
+          <NavLink to="/checkreackformhook">HookForm</NavLink>
         </div>
         
       </nav>
