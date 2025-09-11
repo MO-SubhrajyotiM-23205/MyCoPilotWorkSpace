@@ -1,5 +1,6 @@
 import React from "react";
 import UserContext from "./Contexts/UserContext";
+import ErrorBoundary from './ErrorBoundary.jsx'
 import { Route, Routes, useNavigate } from "react-router-dom";
 import TestQueryString from "./assets/Components/TestQueryString";
 import "./app.css";
@@ -12,6 +13,7 @@ import DBBindList from "./assets/Components/DBBindList";
 import APIcallthroughUseData from "./assets/Components/Movielist/APIcallthroughUseData";
 import CheckUseRefHook from "./assets/Components/CheckUseRefHook";
 import CreateReackFormHook from "./assets/Components/CreateReackFormHook";
+
 
 function App() {
   const navigate = useNavigate();
@@ -26,24 +28,26 @@ function App() {
   };
   return (
     <UserContext.Provider value={userContextValue}>
-      <div className="App">
-        <Navbar />
-        <main>
-          <button onClick={handleTestQuery} style={{margin: '1rem'}}>Show TestQueryString</button>
-          <Routes >
-            <Route path="/" element={<MovieList />} />
-            <Route path="/movielist" element={<MovieList />} />
-            <Route path="/apitest" element={<APITest />} />
-            <Route path="/testabc" element={<TestQueryString />} />
-            <Route path="/axioscalling" element={<APIAxiosCalling />} />
-            <Route path="/dbbindlist" element={<DBBindList />} />
-            <Route path="/apicallthroughusedata" element={<APIcallthroughUseData />} />
-            <Route path="/checkuserefhook" element={<CheckUseRefHook />} />
-            <Route path="/checkreackformhook" element={<CreateReackFormHook />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-      </div>
+      <ErrorBoundary>
+        <div className="App">
+          <Navbar />
+          <main>
+            <button onClick={handleTestQuery} style={{margin: '1rem'}}>Show TestQueryString</button>
+            <Routes >
+              <Route path="/" element={<MovieList />} />
+              <Route path="/movielist" element={<MovieList />} />
+              <Route path="/apitest" element={<APITest />} />
+              <Route path="/testabc" element={<TestQueryString />} />
+              <Route path="/axioscalling" element={<APIAxiosCalling />} />
+              <Route path="/dbbindlist" element={<DBBindList />} />
+              <Route path="/apicallthroughusedata" element={<APIcallthroughUseData />} />
+              <Route path="/checkuserefhook" element={<CheckUseRefHook />} />
+              <Route path="/checkreackformhook" element={<CreateReackFormHook />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+        </div>
+      </ErrorBoundary>
     </UserContext.Provider>
   );
 }

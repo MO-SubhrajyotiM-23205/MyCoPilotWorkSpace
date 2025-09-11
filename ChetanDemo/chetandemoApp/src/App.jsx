@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ErrorBoundary from './ErrorBoundary.jsx'
 import Test, { Test2, Test3 } from './Test.jsx'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -22,22 +23,22 @@ function App() {
       alert("Variable is: " + counter) 
   }
   return (
-    <>
-     
-      <h1>Understand the useState</h1>
-      <p>Current count is: {count}</p>
-      <p>Current counter is: {counter}</p>
-      <button onClick={handleClick}>Increment Count</button>
-      <button onClick={() => setCount(0)}>Reset Count</button>
-      <button onClick={() => Sumveriable(counter)}>Increment Variable {counter}</button>
-  <Test />
-  <Test2 />
-  <Test3 />
-  <UserInfo />
-  <Practical1 />
-  <Filternumber />
-
-    </>
+    <ErrorBoundary>
+      <>
+        <h1>Understand the useState</h1>
+        <p>Current count is: {count}</p>
+        <p>Current counter is: {counter}</p>
+        <button onClick={handleClick}>Increment Count</button>
+        <button onClick={() => setCount(0)}>Reset Count</button>
+        <button onClick={() => Sumveriable(counter)}>Increment Variable {counter}</button>
+        <Test />
+        <Test2 />
+        <Test3 />
+        <UserInfo />
+        <Practical1 />
+        <Filternumber />
+      </>
+    </ErrorBoundary>
   )
 }
 
