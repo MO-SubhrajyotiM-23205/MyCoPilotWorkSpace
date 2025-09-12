@@ -1,9 +1,21 @@
+
 import React from "react";
 import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
+const schema = z.object({
+    name: z.string().trim().min(1, { message: "Name is required" }).min(5, { message: "Name must be at least 5 characters" }),
+    email: z.string().email("Invalid email address"),
+    phone: z.string().nonempty("Phone is required"),
+    dob: z.string().nonempty("Date of Birth is required"),
+    course: z.string().nonempty("Course is required"),
+});
 
 const CreateReackFormHook = () => {
-    const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful }, watch } = useForm();
+    const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful }, watch } = useForm({
+        resolver: zodResolver(schema)
+    });
 
     const onSubmit = (data) => {
         // You can add API call here
@@ -16,25 +28,24 @@ const CreateReackFormHook = () => {
             <h2>Student Registration Form</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label>Name:<br />
-                    <input type="text" {...register("name", { required: true, minLength: 3 })} />
-                    {errors.name?.type === 'required' && <span style={{ color: 'red' }}>Name is required</span>}
-                    {errors.name?.type === 'minLength' && <span style={{ color: 'red' }}>Name must be at least 3 characters</span>}
+                    <input type="text" {...register("name")} />
+                    {errors.name && <span style={{ color: 'red' }}>{errors.name.message}</span>}
                 </label><br /><br />
                 <label>Email:<br />
-                    <input type="email" {...register("email", { required: true })} />
-                    {errors.email && <span style={{ color: 'red' }}>Email is required</span>}
+                    <input type="email" {...register("email")} />
+                    {errors.email && <span style={{ color: 'red' }}>{errors.email.message}</span>}
                 </label><br /><br />
                 <label>Phone:<br />
-                    <input type="tel" {...register("phone", { required: true })} />
-                    {errors.phone && <span style={{ color: 'red' }}>Phone is required</span>}
+                    <input type="tel" {...register("phone")} />
+                    {errors.phone && <span style={{ color: 'red' }}>{errors.phone.message}</span>}
                 </label><br /><br />
                 <label>Date of Birth:<br />
-                    <input type="date" {...register("dob", { required: true })} />
-                    {errors.dob && <span style={{ color: 'red' }}>Date of Birth is required</span>}
+                    <input type="date" {...register("dob")} />
+                    {errors.dob && <span style={{ color: 'red' }}>{errors.dob.message}</span>}
                 </label><br /><br />
                 <label>Course:<br />
-                    <input type="text" {...register("course", { required: true })} />
-                    {errors.course && <span style={{ color: 'red' }}>Course is required</span>}
+                    <input type="text" {...register("course")} />
+                    {errors.course && <span style={{ color: 'red' }}>{errors.course.message}</span>}
                 </label><br /><br />
                 <button type="submit">Register</button>
             </form>
