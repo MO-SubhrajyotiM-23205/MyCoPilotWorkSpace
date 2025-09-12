@@ -16,8 +16,9 @@ const CreateReackFormHook = () => {
             <h2>Student Registration Form</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label>Name:<br />
-                    <input type="text" {...register("name", { required: true })} />
-                    {errors.name && <span style={{ color: 'red' }}>Name is required</span>}
+                    <input type="text" {...register("name", { required: true, minLength: 3 })} />
+                    {errors.name?.type === 'required' && <span style={{ color: 'red' }}>Name is required</span>}
+                    {errors.name?.type === 'minLength' && <span style={{ color: 'red' }}>Name must be at least 3 characters</span>}
                 </label><br /><br />
                 <label>Email:<br />
                     <input type="email" {...register("email", { required: true })} />
