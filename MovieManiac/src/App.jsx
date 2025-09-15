@@ -13,6 +13,8 @@ import DBBindList from "./assets/Components/DBBindList";
 import APIcallthroughUseData from "./assets/Components/Movielist/APIcallthroughUseData";
 import CheckUseRefHook from "./assets/Components/CheckUseRefHook";
 import CreateReackFormHook from "./assets/Components/CreateReackFormHook";
+import CheckUseMemo from "./assets/Components/CheckUseMemo.jsx";
+import CheckUseCallback from "./assets/Components/CheckUseCallback.jsx";
 
 
 function App() {
@@ -30,7 +32,7 @@ function App() {
     <UserContext.Provider value={userContextValue}>
       <ErrorBoundary>
         <div className="App">
-          <Navbar />
+          {/* <Navbar />
           <main>
             <button onClick={handleTestQuery} style={{margin: '1rem'}}>Show TestQueryString</button>
             <Routes >
@@ -45,7 +47,9 @@ function App() {
               <Route path="/checkreackformhook" element={<CreateReackFormHook />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
-          </main>
+          </main> 
+          <CheckUseMemo />*/}
+          <CheckUseCallback />
         </div>
       </ErrorBoundary>
     </UserContext.Provider>
