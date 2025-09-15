@@ -15,6 +15,8 @@ import CheckUseRefHook from "./assets/Components/CheckUseRefHook";
 import CreateReackFormHook from "./assets/Components/CreateReackFormHook";
 import CheckUseMemo from "./assets/Components/CheckUseMemo.jsx";
 import CheckWorker from "./assets/Components/CheckWorker.jsx";
+import CheckUseCallback from "./assets/Components/UseCallbackTest/UsecallbackCheck.jsx";
+
 
 
 function App() {
@@ -32,9 +34,9 @@ function App() {
     <UserContext.Provider value={userContextValue}>
       <ErrorBoundary>
         <div className="App">
-          {/* <Navbar />
+           <Navbar />
           <main>
-            <button onClick={handleTestQuery} style={{margin: '1rem'}}>Show TestQueryString</button>
+            {/* <button onClick={handleTestQuery} style={{margin: '1rem'}}>Show TestQueryString</button>
             <Routes >
               <Route path="/" element={<MovieList />} />
               <Route path="/movielist" element={<MovieList />} />
@@ -46,10 +48,11 @@ function App() {
               <Route path="/checkuserefhook" element={<CheckUseRefHook />} />
               <Route path="/checkreackformhook" element={<CreateReackFormHook />} />
               <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main> */}
-          
-          <CheckWorker />
+            </Routes> */}
+             <CheckUseCallback />
+          </main> 
+
+         
         </div>
       </ErrorBoundary>
     </UserContext.Provider>

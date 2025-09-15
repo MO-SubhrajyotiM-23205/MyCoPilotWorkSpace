@@ -2,5 +2,14 @@
   display: grid;
   grid-template-rows: 80px auto;
 
+  .dark {
+    background-color: #222;
+    color: white;
+  }
+
+  .light {
+    background-color: #f5f5f5;
+    color: black;
+  } 
 }
 
