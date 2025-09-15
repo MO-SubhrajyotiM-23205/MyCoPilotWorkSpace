@@ -14,7 +14,7 @@ import APIcallthroughUseData from "./assets/Components/Movielist/APIcallthroughU
 import CheckUseRefHook from "./assets/Components/CheckUseRefHook";
 import CreateReackFormHook from "./assets/Components/CreateReackFormHook";
 import CheckUseMemo from "./assets/Components/CheckUseMemo.jsx";
-import CheckUseCallback from "./assets/Components/CheckUseCallback.jsx";
+import CheckWorker from "./assets/Components/CheckWorker.jsx";
 
 
 function App() {
@@ -47,9 +47,9 @@ function App() {
               <Route path="/checkreackformhook" element={<CreateReackFormHook />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
-          </main> 
-          <CheckUseMemo />*/}
-          <CheckUseCallback />
+          </main> */}
+          
+          <CheckWorker />
         </div>
       </ErrorBoundary>
     </UserContext.Provider>
