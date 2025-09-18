@@ -16,6 +16,8 @@ import CreateReackFormHook from "./assets/Components/CreateReackFormHook";
 import CheckUseMemo from "./assets/Components/CheckUseMemo.jsx";
 import CheckWorker from "./assets/Components/CheckWorker.jsx";
 import CheckUseCallback from "./assets/Components/UseCallbackTest/UsecallbackCheck.jsx";
+import UseReducerHook from "./assets/Components/UseReducerHook.jsx";
+
 
 
 
@@ -49,7 +51,8 @@ function App() {
               <Route path="/checkreackformhook" element={<CreateReackFormHook />} />
               <Route path="*" element={<NotFound />} />
             </Routes> */}
-             <CheckUseCallback />
+             {/* <CheckUseCallback /> */}
+             <UseReducerHook />
           </main> 
 
          

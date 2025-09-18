@@ -1,0 +1,195 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API_CORPUS",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Corpus/search/{clientId}": {
+      "get": {
+        "tags": [
+          "Corpus"
+        ],
+        "parameters": [
+          {
+            "name": "clientId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CorpusDetails": {
+      "post": {
+        "tags": [
+          "CorpusDetails"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CorpusDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CorpusDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CorpusDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "GetWeatherForecast",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CorpusDetails": {
+        "type": "object",
+        "properties": {
+          "corpusType": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "depositionMode": {
+            "type": "string",
+            "nullable": true
+          },
+          "chequeNo": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "cmsChequePath": {
+            "type": "string",
+            "nullable": true
+          },
+          "utrNo": {
+            "type": "string",
+            "nullable": true
+          },
+          "utrPath": {
+            "type": "string",
+            "nullable": true
+          },
+          "splitOption": {
+            "type": "string",
+            "nullable": true
+          },
+          "splitPath": {
+            "type": "string",
+            "nullable": true
+          },
+          "waiverOption": {
+            "type": "string",
+            "nullable": true
+          },
+          "waiverPath": {
+            "type": "string",
+            "nullable": true
+          },
+          "userId": {
+            "type": "number",
+            "format": "double"
+          },
+          "clientCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "cashVisaCopy": {
+            "type": "string",
+            "nullable": true
+          },
+          "cashImmigrationCopy": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "temperatureF": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

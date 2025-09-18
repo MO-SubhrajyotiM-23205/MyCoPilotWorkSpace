@@ -1,0 +1,185 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|d:\\reactapplication\\mycopilotworkspace\\api_corpus\\data\\corpusdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|solutionrelative:data\\corpusdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|d:\\reactapplication\\mycopilotworkspace\\api_corpus\\controllers\\corpuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|solutionrelative:controllers\\corpuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|d:\\reactapplication\\mycopilotworkspace\\api_corpus\\controllers\\corpusdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|solutionrelative:controllers\\corpusdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|d:\\reactapplication\\mycopilotworkspace\\api_corpus\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|d:\\reactapplication\\mycopilotworkspace\\api_corpus\\corpus\\corpusdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|solutionrelative:corpus\\corpusdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|d:\\reactapplication\\mycopilotworkspace\\api_corpus\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|d:\\reactapplication\\mycopilotworkspace\\api_corpus\\corpus\\corpus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|solutionrelative:corpus\\corpus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|d:\\reactapplication\\mycopilotworkspace\\api_corpus\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|d:\\reactapplication\\mycopilotworkspace\\api_corpus\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|solutionrelative:weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|d:\\reactapplication\\mycopilotworkspace\\api_corpus\\api_corpus.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{BB3E9D26-E903-4E50-A6CA-5D2594CED935}|API_CORPUS.csproj|solutionrelative:api_corpus.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
+              "ToolTip": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAIwBwAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T10:00:01.723Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-16T09:02:00.004Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CorpusDbContext.cs",
+              "DocumentMoniker": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\Data\\CorpusDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\CorpusDbContext.cs",
+              "ToolTip": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\Data\\CorpusDbContext.cs",
+              "RelativeToolTip": "Data\\CorpusDbContext.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAhwBQAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T09:01:21.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "corpus.cs",
+              "DocumentMoniker": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\CORPUS\\corpus.cs",
+              "RelativeDocumentMoniker": "CORPUS\\corpus.cs",
+              "ToolTip": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\CORPUS\\corpus.cs",
+              "RelativeToolTip": "CORPUS\\corpus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T09:00:07.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CorpusController.cs",
+              "DocumentMoniker": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\Controllers\\CorpusController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CorpusController.cs",
+              "ToolTip": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\Controllers\\CorpusController.cs",
+              "RelativeToolTip": "Controllers\\CorpusController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAApwCoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T07:57:40.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CorpusDetailsController.cs",
+              "DocumentMoniker": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\Controllers\\CorpusDetailsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CorpusDetailsController.cs",
+              "ToolTip": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\Controllers\\CorpusDetailsController.cs",
+              "RelativeToolTip": "Controllers\\CorpusDetailsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T04:14:46.689Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CorpusDetails.cs",
+              "DocumentMoniker": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\CORPUS\\CorpusDetails.cs",
+              "RelativeDocumentMoniker": "CORPUS\\CorpusDetails.cs",
+              "ToolTip": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\CORPUS\\CorpusDetails.cs",
+              "RelativeToolTip": "CORPUS\\CorpusDetails.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T04:15:25.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "WeatherForecast.cs",
+              "ToolTip": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\WeatherForecast.cs",
+              "RelativeToolTip": "WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T07:44:53.584Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "API_CORPUS.http",
+              "DocumentMoniker": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\API_CORPUS.http",
+              "RelativeDocumentMoniker": "API_CORPUS.http",
+              "ToolTip": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\API_CORPUS.http",
+              "RelativeToolTip": "API_CORPUS.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-09-16T07:44:43.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\ReactApplication\\MyCoPilotWorkSpace\\API_CORPUS\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T07:42:35.234Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

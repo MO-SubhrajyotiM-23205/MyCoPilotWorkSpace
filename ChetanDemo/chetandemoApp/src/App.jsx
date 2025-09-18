@@ -7,6 +7,9 @@ import './App.css'
 import UserInfo from './Lession1.jsx'
 import Practical1, { Filternumber } from './Practical1.jsx'
 import CRMForm from './CRMForm.jsx'
+import StudentRegistration from './Components/StudentRegistration.jsx' 
+import StuRegistration from './Components/StuReg.jsx' 
+
 
 
 function App() {
@@ -39,7 +42,10 @@ function App() {
       <Practical1 />
       <Filternumber /> */}
       <ErrorBoundary textColor="crimson">
-        <CRMForm />
+        
+        <StuRegistration />
+        
+
       </ErrorBoundary>
     </>
 

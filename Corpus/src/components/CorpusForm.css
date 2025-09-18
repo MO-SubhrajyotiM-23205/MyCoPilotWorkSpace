@@ -1,0 +1,24 @@
+/* CorpusForm.css */
+.corpus-form {
+  padding: 0px;
+  background-color: #f8f9fa; /* light gray background */
+  border-radius: 8px;
+}
+
+.card,
+.card-body {
+  padding: 0px !important;
+}
+
+.corpus-form .form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.form-label {
+  text-align: left !important;
+  font-weight: bold;
+  font-size: 12px;
+  display: block;
+}

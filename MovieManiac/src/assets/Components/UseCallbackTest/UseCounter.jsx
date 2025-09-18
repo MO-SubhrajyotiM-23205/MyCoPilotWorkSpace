@@ -5,7 +5,7 @@ const Usecounter = ({ counter, incrementCounter }) => {
 
     console.log("UseCounter Rendered");
     let starttime = performance.now();
-    while (performance.now() - starttime < 500) {
+    while (performance.now() - starttime < 1000) {
         // Simulate expensive calculation
     }   
     return (

@@ -1,0 +1,33 @@
+.corpus-tabs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.tab {
+  background: #e3e3e3;
+  color: #3a3a3a;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tab.active {
+  background: #e53935;
+  color: #fff;
+}
+
+.tab:not(.active):nth-child(2),
+.tab:not(.active):nth-child(3),
+.tab:not(.active):nth-child(4) {
+  background: #6c63ff;
+  color: #fff;
+}
+
+.tab:not(.active):hover {
+  background: #bdbdbd;
+}

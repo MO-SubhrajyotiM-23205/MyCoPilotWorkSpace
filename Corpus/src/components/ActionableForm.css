@@ -1,0 +1,24 @@
+.actionable-form .form-group {
+  margin-bottom: 0px;
+}
+
+.actionable-form .form-label {
+  text-align: left !important;
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.actionable-form .row {
+  margin-bottom: 0px;
+}
+
+.actionable-form .col-md-3 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.card {
+  padding: 12px !important;
+}
