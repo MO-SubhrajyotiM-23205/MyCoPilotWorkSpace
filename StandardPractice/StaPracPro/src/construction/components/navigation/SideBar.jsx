@@ -17,7 +17,8 @@ import {
   Sms,
   Dashboard,
   Visibility,
-  ChevronLeft
+  ChevronLeft,
+  Api
 } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../../contexts/AppContext';
@@ -27,6 +28,7 @@ const DRAWER_WIDTH = 240;
 const menuItems = [
   { text: 'Dashboard', icon: <Dashboard />, path: '/' },
   { text: 'Home', icon: <Home />, path: '/home' },
+  { text: 'API Test', icon: <Api />, path: '/api-test' },
   { text: 'Email Test', icon: <Email />, path: '/email' },
   { text: 'SMS Test', icon: <Sms />, path: '/sms' },
   { text: 'Settings', icon: <Settings />, path: '/settings' },
