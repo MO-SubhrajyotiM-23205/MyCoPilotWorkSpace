@@ -39,18 +39,25 @@ const Login = () => {
 
   return (
     <Box
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      minHeight="100vh"
-      sx={{ backgroundColor: 'background.default', px: 2 }}
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '100vh',
+        width: '100vw',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        backgroundColor: 'background.default',
+        padding: 2
+      }}
     >
-      <Paper elevation={3} sx={{ p: 4, maxWidth: 400, width: '100%', mx: 'auto' }}>
-        <Typography variant="h4" align="left" gutterBottom>
+      <Paper elevation={3} sx={{ p: 4, width: '100%', maxWidth: 400 }}>
+        <Typography variant="h4" align="center" gutterBottom>
           Login
         </Typography>
-        <Typography variant="body2" align="left" color="text.secondary" sx={{ mb: 2 }}>
-          Uses fixed API credentials (myzone/myzone_123)
+        <Typography variant="body2" align="center" color="text.secondary" sx={{ mb: 2 }}>
+          Uses Myzone credentials to login.
         </Typography>
         
         <form onSubmit={handleSubmit(onSubmit)}>
