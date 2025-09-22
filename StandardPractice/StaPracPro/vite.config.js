@@ -8,9 +8,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://pam97xhjtk.execute-api.ap-south-1.amazonaws.com',
+        target: 'https://myzonebeta.motilaloswaluat.com',
         changeOrigin: true,
-        rewrite: path => path.replace(/^\/api/, '/default/geolocation')
+        secure: true,
+        rewrite: path => path.replace(/^\/api/, '')
       }
     }
   }

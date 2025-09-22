@@ -1,16 +1,9 @@
 import axios from 'axios';
+import { authService } from './authService.js';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://myzonebeta.motilaloswaluat.com/HrmsApi';
-const TOKEN_URL = 'https://myzonebeta.motilaloswaluat.com/HrmsApi/Token';
+const API_BASE_URL = '/api';
 
-// Create separate clients for auth and API calls
-const authClient = axios.create({
-  timeout: 10000,
-  headers: {
-    'Content-Type': 'application/x-www-form-urlencoded',
-  },
-});
-
+// API client for general API calls
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
   timeout: 10000,
@@ -80,12 +73,6 @@ const handleApiError = (error) => {
   return errorResponse;
 };
 
-// Auth client interceptors
-authClient.interceptors.response.use(
-  (response) => response,
-  (error) => Promise.reject(handleApiError(error))
-);
-
 // API client interceptors
 apiClient.interceptors.request.use(
   async (config) => {
@@ -143,78 +130,10 @@ apiClient.interceptors.response.use(
   }
 );
 
-// Authentication service
-export const authService = {
-  // Stage 1: Get token using fixed credentials
-  login: async (userCredentials) => {
-    try {
-      // Use fixed credentials for token API
-      const tokenData = new URLSearchParams({
-        grant_Type: 'password',
-        UserName: 'myzone',
-        Password: 'myzone_123'
-      });
-      
-      const response = await authClient.post(TOKEN_URL, tokenData);
-      const { access_token, token_type, expires_in } = response.data;
-      
-      // Store tokens
-      localStorage.setItem('authToken', access_token);
-      localStorage.setItem('tokenType', token_type || 'Bearer');
-      localStorage.setItem('tokenExpiry', Date.now() + (expires_in * 1000));
-      localStorage.setItem('user', JSON.stringify({ employeeCode: userCredentials.employeeCode }));
-      
-      return { success: true, data: response.data };
-    } catch (error) {
-      return { success: false, error };
-    }
-  },
+// Export auth service for backward compatibility
+export { authService };
 
-  // Get new token (same as login but without user credentials)
-  getNewToken: async () => {
-    const tokenData = new URLSearchParams({
-      grant_Type: 'password',
-      UserName: 'myzone',
-      Password: 'myzone_123'
-    });
-    
-    const response = await authClient.post(TOKEN_URL, tokenData);
-    const { access_token, token_type, expires_in } = response.data;
-    
-    localStorage.setItem('authToken', access_token);
-    localStorage.setItem('tokenType', token_type || 'Bearer');
-    localStorage.setItem('tokenExpiry', Date.now() + (expires_in * 1000));
-    
-    return response;
-  },
-
-  // Logout
-  logout: async () => {
-    try {
-      // Clear all stored data
-      localStorage.removeItem('authToken');
-      localStorage.removeItem('tokenType');
-      localStorage.removeItem('tokenExpiry');
-      localStorage.removeItem('user');
-      window.location.href = '/login';
-    } catch (error) {
-      console.error('Logout error:', error);
-    }
-  },
-
-  // Check if user is authenticated
-  isAuthenticated: () => {
-    return !!localStorage.getItem('authToken');
-  },
-
-  // Get current user
-  getCurrentUser: () => {
-    const user = localStorage.getItem('user');
-    return user ? JSON.parse(user) : null;
-  }
-};
-
-// Stage 2: API service with automatic token handling
+// API service with automatic token handling
 export const apiService = {
   get: async (url, config = {}) => {
     try {

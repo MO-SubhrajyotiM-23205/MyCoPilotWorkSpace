@@ -15,6 +15,7 @@ import { authService } from '../services/apiService';
 const Login = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [authStage, setAuthStage] = useState('');
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -22,19 +23,22 @@ const Login = () => {
     setLoading(true);
     setError(null);
     
-    // Stage 1: Get token using credentials
-    const result = await authService.login(data);
-    
-    if (result.success) {
-      // Stage 2: Token is now stored, redirect to dashboard
-      navigate('/');
-    } else {
-      // Handle different error types
-      const { error } = result;
-      setError(error.userMessage || error.message);
+    try {
+      setAuthStage('Generating token...');
+      const result = await authService.login(data);
+      
+      if (result.success) {
+        setAuthStage('Authentication successful!');
+        setTimeout(() => navigate('/'), 500);
+      } else {
+        setError(result.error.userMessage || result.error.message || 'Authentication failed');
+      }
+    } catch (err) {
+      setError('An unexpected error occurred during authentication');
+    } finally {
+      setLoading(false);
+      setAuthStage('');
     }
-    
-    setLoading(false);
   };
 
   return (
@@ -57,8 +61,14 @@ const Login = () => {
           Login
         </Typography>
         <Typography variant="body2" align="center" color="text.secondary" sx={{ mb: 2 }}>
-          Uses Myzone credentials to login.
+          Three-stage authentication: Token → Access → Authorization
         </Typography>
+        
+        {authStage && (
+          <Alert severity="info" sx={{ mb: 2 }}>
+            {authStage}
+          </Alert>
+        )}
         
         <form onSubmit={handleSubmit(onSubmit)}>
           <TextField
