@@ -10,6 +10,7 @@ import EmailTest from './pages/EmailTest';
 import Login from './pages/Login';
 import ApiTest from './pages/ApiTest';
 import AdvisoryTalktime from './pages/AdvisoryTalktime';
+import TestMyAPI from './pages/TestMyAPI';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -44,6 +45,9 @@ function App() {
                 </Route>
                 <Route path="/advisory-talktime" element={<Layout />}>
                   <Route index element={<AdvisoryTalktime />} />
+                </Route>
+                <Route path="/test-my-api" element={<Layout />}>
+                  <Route index element={<TestMyAPI />} />
                 </Route>
                 <Route path="/sms" element={<Layout />}>
                   <Route index element={<div>SMS Test Page</div>} />

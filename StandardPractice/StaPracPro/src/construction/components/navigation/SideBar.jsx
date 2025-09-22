@@ -31,6 +31,7 @@ const menuItems = [
   { text: 'API Test', icon: <Api />, path: '/api-test' },
   { text: 'Email Test', icon: <Email />, path: '/email' },
   { text: 'Advisory Talktime', icon: <Visibility />, path: '/advisory-talktime' },
+  { text: 'Test My API', icon: <Api />, path: '/test-my-api' },
   { text: 'SMS Test', icon: <Sms />, path: '/sms' },
   { text: 'Settings', icon: <Settings />, path: '/settings' },
 ];
