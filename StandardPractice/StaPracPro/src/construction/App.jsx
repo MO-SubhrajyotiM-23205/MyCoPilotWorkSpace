@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard';
 import EmailTest from './pages/EmailTest';
 import Login from './pages/Login';
 import ApiTest from './pages/ApiTest';
+import AdvisoryTalktime from './pages/AdvisoryTalktime';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,6 +29,7 @@ function App() {
             <Router>
               <Routes>
                 <Route path="/" element={<Login />} />
+                <Route path="/login" element={<Login />} />
                 <Route path="/dashboard" element={<Layout />}>
                   <Route index element={<Dashboard />} />
                 </Route>
@@ -39,6 +41,9 @@ function App() {
                 </Route>
                 <Route path="/api-test" element={<Layout />}>
                   <Route index element={<ApiTest />} />
+                </Route>
+                <Route path="/advisory-talktime" element={<Layout />}>
+                  <Route index element={<AdvisoryTalktime />} />
                 </Route>
                 <Route path="/sms" element={<Layout />}>
                   <Route index element={<div>SMS Test Page</div>} />

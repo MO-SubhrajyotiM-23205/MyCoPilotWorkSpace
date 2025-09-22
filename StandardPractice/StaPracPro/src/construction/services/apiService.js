@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { authService } from './authService.js';
+import { authService } from './MyZoneAuthService.js';
 
 const API_BASE_URL = '/api';
 

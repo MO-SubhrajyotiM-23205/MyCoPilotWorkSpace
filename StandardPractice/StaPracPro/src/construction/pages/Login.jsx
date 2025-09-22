@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { authService } from '../services/apiService';
+import { authService } from '../services/MyZoneAuthService';
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -29,7 +29,7 @@ const Login = () => {
       
       if (result.success) {
         setAuthStage('Authentication successful!');
-        setTimeout(() => navigate('/'), 500);
+        setTimeout(() => navigate('/dashboard'), 500);
       } else {
         setError(result.error.userMessage || result.error.message || 'Authentication failed');
       }
