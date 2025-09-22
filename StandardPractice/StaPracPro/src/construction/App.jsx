@@ -27,14 +27,24 @@ function App() {
           <AppProvider>
             <Router>
               <Routes>
-                <Route path="/login" element={<Login />} />
-                <Route path="/" element={<Layout />}>
+                <Route path="/" element={<Login />} />
+                <Route path="/dashboard" element={<Layout />}>
                   <Route index element={<Dashboard />} />
-                  <Route path="home" element={<Dashboard />} />
-                  <Route path="email" element={<EmailTest />} />
-                  <Route path="api-test" element={<ApiTest />} />
-                  <Route path="sms" element={<div>SMS Test Page</div>} />
-                  <Route path="settings" element={<div>Settings Page</div>} />
+                </Route>
+                <Route path="/home" element={<Layout />}>
+                  <Route index element={<Dashboard />} />
+                </Route>
+                <Route path="/email" element={<Layout />}>
+                  <Route index element={<EmailTest />} />
+                </Route>
+                <Route path="/api-test" element={<Layout />}>
+                  <Route index element={<ApiTest />} />
+                </Route>
+                <Route path="/sms" element={<Layout />}>
+                  <Route index element={<div>SMS Test Page</div>} />
+                </Route>
+                <Route path="/settings" element={<Layout />}>
+                  <Route index element={<div>Settings Page</div>} />
                 </Route>
               </Routes>
             </Router>
