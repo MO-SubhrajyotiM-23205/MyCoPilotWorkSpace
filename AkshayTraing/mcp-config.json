@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "sqlserver": {
+      "command": "node",
+      "args": ["mcp-server.js"],
+      "cwd": "."
+    }
+  }
+}

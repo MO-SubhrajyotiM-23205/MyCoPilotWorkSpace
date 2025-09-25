@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import AkshayTrainingClass, {AkshayDemo,testValue}from './AkshayTrainingClass.jsx'
+import DatabaseTest from './DatabaseTest.jsx'
 
 function Test() {
   return (
@@ -23,7 +24,8 @@ function App() {
       <Test></Test>
       <AkshayTrainingClass></AkshayTrainingClass> 
       <AkshayDemo></AkshayDemo>
-      <div>{testValue()}</div>  
+      <div>{testValue()}</div>
+      <DatabaseTest></DatabaseTest>
     </>
   )
 }
