@@ -38,7 +38,7 @@ function App() {
         <div className="App">
            <Navbar />
           <main>
-            {/* <button onClick={handleTestQuery} style={{margin: '1rem'}}>Show TestQueryString</button>
+            <button onClick={handleTestQuery} style={{margin: '1rem'}}>Show TestQueryString</button>
             <Routes >
               <Route path="/" element={<MovieList />} />
               <Route path="/movielist" element={<MovieList />} />
@@ -50,9 +50,9 @@ function App() {
               <Route path="/checkuserefhook" element={<CheckUseRefHook />} />
               <Route path="/checkreackformhook" element={<CreateReackFormHook />} />
               <Route path="*" element={<NotFound />} />
-            </Routes> */}
-             {/* <CheckUseCallback /> */}
-             <UseReducerHook />
+            </Routes> 
+             {/* {/* <CheckUseCallback />
+             <UseReducerHook /> */}
           </main> 
 
          

@@ -3,6 +3,8 @@
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import sql from 'mssql';
+import express from 'express';
+import cors from 'cors';
 
 const server = new Server(
   {
@@ -96,6 +98,27 @@ server.setRequestHandler('tools/list', async () => {
 
 async function main() {
   await initDB();
+  
+  // Start Express server
+  const app = express();
+  app.use(cors());
+  app.use(express.json());
+  
+  app.post('/api/query', async (req, res) => {
+    try {
+      const { query } = req.body;
+      const result = await pool.request().query(query);
+      res.json(result.recordset);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
+  
+  app.listen(3001, () => {
+    console.log('HTTP server running on http://localhost:3001');
+  });
+  
+  // Start MCP server
   const transport = new StdioServerTransport();
   await server.connect(transport);
 }
