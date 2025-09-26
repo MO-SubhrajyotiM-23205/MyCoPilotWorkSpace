@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
+import 'dotenv/config';
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import sql from 'mssql';
-import express from 'express';
-import cors from 'cors';
 
 const server = new Server(
   {
@@ -20,11 +19,11 @@ const server = new Server(
 
 // SQL Server configuration
 const config = {
-  server: 'moamcuat.dbmosl.com',
-  port: 24115,
-  user: 'business',
-  password: 'business_2018#',
-  database: 'PMS_TRACKER_NEW',
+  server: process.env.DB_SERVER || 'moamcuat.dbmosl.com',
+  port: process.env.DB_PORT || 24115,
+  user: process.env.DB_USER || 'business',
+  password: process.env.DB_PASSWORD || '<password>',
+  database: process.env.DB_NAME || 'PMS_TRACKER_NEW',
   options: {
     encrypt: true,
     trustServerCertificate: true,
@@ -49,7 +48,44 @@ server.setRequestHandler('tools/call', async (request) => {
 
   if (name === 'execute_query') {
     try {
-      const result = await pool.request().query(args.query);
+      const query = args.query.trim();
+      const queryLower = query.toLowerCase();
+      
+      // Only allow SELECT statements
+      if (!queryLower.startsWith('select')) {
+        throw new Error('Only SELECT queries are allowed');
+      }
+      
+      // Block dangerous keywords and patterns
+      const dangerousPatterns = [
+        /union\s+select/i,
+        /drop\s+table/i,
+        /delete\s+from/i,
+        /insert\s+into/i,
+        /update\s+set/i,
+        /exec\s*\(/i,
+        /execute\s*\(/i,
+        /--/,
+        /;\s*select/i,
+        /xp_/i,
+        /sp_/i
+      ];
+      
+      if (dangerousPatterns.some(pattern => pattern.test(query))) {
+        throw new Error('Query contains prohibited patterns');
+      }
+      
+      // Whitelist allowed tables only
+      const allowedTables = ['TBL_COC_DIST_MASTER', 'TBL_COC_DIST_STATUS'];
+      const hasAllowedTable = allowedTables.some(table => 
+        queryLower.includes(table.toLowerCase())
+      );
+      
+      if (!hasAllowedTable) {
+        throw new Error('Query must reference allowed tables only');
+      }
+      
+      const result = await pool.request().query(query);
       return {
         content: [
           {
@@ -98,27 +134,6 @@ server.setRequestHandler('tools/list', async () => {
 
 async function main() {
   await initDB();
-  
-  // Start Express server
-  const app = express();
-  app.use(cors());
-  app.use(express.json());
-  
-  app.post('/api/query', async (req, res) => {
-    try {
-      const { query } = req.body;
-      const result = await pool.request().query(query);
-      res.json(result.recordset);
-    } catch (error) {
-      res.status(500).json({ error: error.message });
-    }
-  });
-  
-  app.listen(3001, () => {
-    console.log('HTTP server running on http://localhost:3001');
-  });
-  
-  // Start MCP server
   const transport = new StdioServerTransport();
   await server.connect(transport);
 }
