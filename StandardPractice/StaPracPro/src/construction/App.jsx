@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { CustomThemeProvider } from './contexts/ThemeContext';
 import { AppProvider } from './contexts/AppContext';
+import { AlertProvider } from './contexts/AlertContext';
 import ErrorBoundary from './components/common/ErrorBoundary';
+import GlobalAlert from './components/common/GlobalAlert';
 import Layout from './components/layout/Layout';
 import Dashboard from './pages/Dashboard';
 import EmailTest from './pages/EmailTest';
@@ -27,7 +29,9 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <CustomThemeProvider>
           <AppProvider>
-            <Router>
+            <AlertProvider>
+              <Router>
+                <GlobalAlert />
               <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/login" element={<Login />} />
@@ -56,7 +60,8 @@ function App() {
                   <Route index element={<div>Settings Page</div>} />
                 </Route>
               </Routes>
-            </Router>
+              </Router>
+            </AlertProvider>
           </AppProvider>
         </CustomThemeProvider>
       </QueryClientProvider>

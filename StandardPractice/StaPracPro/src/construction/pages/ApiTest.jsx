@@ -11,11 +11,13 @@ import {
   CardContent
 } from '@mui/material';
 import { apiService, authService } from '../services/apiService';
+import { useAlert } from '../contexts/AlertContext';
 
 const ApiTest = () => {
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState([]);
   const [user, setUser] = useState(authService.getCurrentUser());
+  const { showSuccess, showError } = useAlert();
 
   const testApiCall = async (method, endpoint, data = null) => {
     setLoading(true);
@@ -48,6 +50,12 @@ const ApiTest = () => {
       data: result.success ? result.data : result.error,
       errorType: result.success ? null : result.error?.type
     };
+    
+    if (result.success) {
+      showSuccess(`${method} ${endpoint} - Success`);
+    } else {
+      showError(`${method} ${endpoint} - ${result.error?.message || 'Failed'}`);
+    }
     
     setResults(prev => [newResult, ...prev.slice(0, 9)]);
     setLoading(false);
