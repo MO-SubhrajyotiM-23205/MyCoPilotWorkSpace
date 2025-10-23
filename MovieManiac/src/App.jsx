@@ -17,6 +17,7 @@ import CheckUseMemo from "./assets/Components/CheckUseMemo.jsx";
 import CheckWorker from "./assets/Components/CheckWorker.jsx";
 import CheckUseCallback from "./assets/Components/UseCallbackTest/UsecallbackCheck.jsx";
 import UseReducerHook from "./assets/Components/UseReducerHook.jsx";
+import GridFunc from "./assets/Components/GridFunctions/GridFunction.jsx";
 
 
 
@@ -49,6 +50,7 @@ function App() {
               <Route path="/apicallthroughusedata" element={<APIcallthroughUseData />} />
               <Route path="/checkuserefhook" element={<CheckUseRefHook />} />
               <Route path="/checkreackformhook" element={<CreateReackFormHook />} />
+              <Route path="/gridfunction" element={<GridFunc />} />
               <Route path="*" element={<NotFound />} />
             </Routes> 
              {/* {/* <CheckUseCallback />

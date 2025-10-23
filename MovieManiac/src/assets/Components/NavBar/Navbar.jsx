@@ -19,6 +19,7 @@ const Navbar = () => {
           <NavLink to="/dbbindlist">DB Bind List</NavLink>
           <NavLink to="/checkuserefhook">useRef</NavLink>
           <NavLink to="/checkreackformhook">HookForm</NavLink>
+          <NavLink to="/gridfunction">Grid Function</NavLink>
         </div>
         
       </nav>
